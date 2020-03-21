@@ -1,17 +1,13 @@
 <div class="row justify-content-center">
     <div class="col-8">
         <div *ngIf="gastronomy">
-            <h2><span jhiTranslate="savethepubApp.gastronomy.detail.title">Gastronomy</span> {{ gastronomy.id }}</h2>
+            <h2>{{ gastronomy.name }}</h2>
 
             <hr>
 
             <jhi-alert-error></jhi-alert-error>
 
             <dl class="row-md jh-entity-details">
-                <dt><span jhiTranslate="savethepubApp.gastronomy.name">Name</span></dt>
-                <dd>
-                    <span>{{ gastronomy.name }}</span>
-                </dd>
                 <dt><span jhiTranslate="savethepubApp.gastronomy.category">Category</span></dt>
                 <dd>
                     <span jhiTranslate="{{ 'savethepubApp.GastronomyCategory.' + gastronomy.category }}">{{ gastronomy.category }}</span>
@@ -74,6 +70,7 @@
             </button>
 
             <button type="button"
+                    *jhiHasAnyAuthority="'ROLE_ADMIN'"
                     [routerLink]="['/gastronomy', gastronomy.id, 'edit']"
                     class="btn btn-primary">
                 <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
