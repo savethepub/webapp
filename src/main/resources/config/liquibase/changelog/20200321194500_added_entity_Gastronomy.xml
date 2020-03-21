@@ -82,7 +82,7 @@
             <column name="id" type="numeric"/>
             <column name="name" type="string"/>
             <column name="category" type="string"/>
-            <column name="description" type="clob"/>
+            <column name="description" type="string"/>
             <column name="photo" type="blob"/>
             <column name="photo_content_type" type="string"/>
             <column name="contact_name" type="string"/>

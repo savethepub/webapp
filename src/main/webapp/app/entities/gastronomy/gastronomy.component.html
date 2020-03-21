@@ -25,17 +25,21 @@
                     <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
                     <th scope="col" ><span jhiTranslate="savethepubApp.gastronomy.name">Name</span></th>
                     <th scope="col" ><span jhiTranslate="savethepubApp.gastronomy.category">Category</span></th>
+                    <!--
                     <th scope="col" ><span jhiTranslate="savethepubApp.gastronomy.description">Description</span></th>
                     <th scope="col" ><span jhiTranslate="savethepubApp.gastronomy.photo">Photo</span></th>
                     <th scope="col" ><span jhiTranslate="savethepubApp.gastronomy.contactName">Contact Name</span></th>
                     <th scope="col" ><span jhiTranslate="savethepubApp.gastronomy.contactMail">Contact Mail</span></th>
                     <th scope="col" ><span jhiTranslate="savethepubApp.gastronomy.addressLine">Address Line</span></th>
+                    -->
                     <th scope="col" ><span jhiTranslate="savethepubApp.gastronomy.zipCode">Zip Code</span></th>
                     <th scope="col" ><span jhiTranslate="savethepubApp.gastronomy.city">City</span></th>
+                    <!--
                     <th scope="col" ><span jhiTranslate="savethepubApp.gastronomy.facebookLink">Facebook Link</span></th>
                     <th scope="col" ><span jhiTranslate="savethepubApp.gastronomy.twitterLink">Twitter Link</span></th>
                     <th scope="col" ><span jhiTranslate="savethepubApp.gastronomy.instagramLink">Instagram Link</span></th>
                     <th scope="col" ><span jhiTranslate="savethepubApp.gastronomy.supportLink">Support Link</span></th>
+                    -->
                     <th scope="col"></th>
                 </tr>
             </thead>
@@ -44,6 +48,7 @@
                     <td><a [routerLink]="['/gastronomy', gastronomy.id, 'view']">{{ gastronomy.id }}</a></td>
                     <td>{{ gastronomy.name }}</td>
                     <td jhiTranslate="{{ 'savethepubApp.GastronomyCategory.' + gastronomy.category }}">{{ gastronomy.category }}</td>
+                    <!--
                     <td>{{ gastronomy.description }}</td>
                     <td>
                         <a *ngIf="gastronomy.photo" (click)="openFile(gastronomy.photoContentType, gastronomy.photo)">
@@ -54,12 +59,15 @@
                     <td>{{ gastronomy.contactName }}</td>
                     <td>{{ gastronomy.contactMail }}</td>
                     <td>{{ gastronomy.addressLine }}</td>
+                    -->
                     <td>{{ gastronomy.zipCode }}</td>
                     <td>{{ gastronomy.city }}</td>
+                    <!--
                     <td>{{ gastronomy.facebookLink }}</td>
                     <td>{{ gastronomy.twitterLink }}</td>
                     <td>{{ gastronomy.instagramLink }}</td>
                     <td>{{ gastronomy.supportLink }}</td>
+                    -->
                     <td class="text-right">
                         <div class="btn-group">
                             <button type="submit"
