@@ -1,0 +1,12 @@
+<div class="bar-page" *ngIf="$gastronomy | async">
+    <h1>{{ ($gastronomy | async)?.name }}</h1>
+    <div class="card" style="width: 18rem;">
+        <img (click)="enterPub()" *ngIf="($gastronomy | async)?.photoContentType" class="card-img-top" [src]="'data:' + ($gastronomy | async)?.photoContentType + ';base64,' + ($gastronomy | async)?.photo" alt="Bar profile picture">
+        <div class="card-body">
+          <p class="card-text">{{ ($gastronomy | async)?.description }}</p>
+        </div>
+    </div>
+    <div class="bar-flow-element">
+        <button (click)="enterPub()" class="btn btn-primary" jhiTranslate="bar.actions.enter">Kneipe betreten</button>
+    </div>
+</div>
