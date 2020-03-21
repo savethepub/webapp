@@ -1,0 +1,11 @@
+{
+  "savethepubApp": {
+    "GastronomyCategory": {
+      "null": "",
+      "BAR": "BAR",
+      "CAFE": "CAFE",
+      "RESTAURANT": "RESTAURANT",
+      "CLUB": "CLUB"
+    }
+  }
+}

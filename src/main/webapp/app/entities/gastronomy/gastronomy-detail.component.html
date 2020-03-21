@@ -1,0 +1,83 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="gastronomy">
+            <h2><span jhiTranslate="savethepubApp.gastronomy.detail.title">Gastronomy</span> {{ gastronomy.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="savethepubApp.gastronomy.name">Name</span></dt>
+                <dd>
+                    <span>{{ gastronomy.name }}</span>
+                </dd>
+                <dt><span jhiTranslate="savethepubApp.gastronomy.category">Category</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'savethepubApp.GastronomyCategory.' + gastronomy.category }}">{{ gastronomy.category }}</span>
+                </dd>
+                <dt><span jhiTranslate="savethepubApp.gastronomy.description">Description</span></dt>
+                <dd>
+                    <span>{{ gastronomy.description }}</span>
+                </dd>
+                <dt><span jhiTranslate="savethepubApp.gastronomy.photo">Photo</span></dt>
+                <dd>
+                    <div *ngIf="gastronomy.photo">
+                        <a (click)="openFile(gastronomy?.photoContentType!, gastronomy?.photo)">
+                            <img [src]="'data:' + gastronomy.photoContentType + ';base64,' + gastronomy.photo" style="max-width: 100%;" alt="gastronomy image"/>
+                        </a>
+                        {{ gastronomy.photoContentType }}, {{ byteSize(gastronomy.photo) }}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="savethepubApp.gastronomy.contactName">Contact Name</span></dt>
+                <dd>
+                    <span>{{ gastronomy.contactName }}</span>
+                </dd>
+                <dt><span jhiTranslate="savethepubApp.gastronomy.contactMail">Contact Mail</span></dt>
+                <dd>
+                    <span>{{ gastronomy.contactMail }}</span>
+                </dd>
+                <dt><span jhiTranslate="savethepubApp.gastronomy.addressLine" [ngbTooltip]="'savethepubApp.gastronomy.help.addressLine' | translate">Address Line</span></dt>
+                <dd>
+                    <span>{{ gastronomy.addressLine }}</span>
+                </dd>
+                <dt><span jhiTranslate="savethepubApp.gastronomy.zipCode">Zip Code</span></dt>
+                <dd>
+                    <span>{{ gastronomy.zipCode }}</span>
+                </dd>
+                <dt><span jhiTranslate="savethepubApp.gastronomy.city">City</span></dt>
+                <dd>
+                    <span>{{ gastronomy.city }}</span>
+                </dd>
+                <dt><span jhiTranslate="savethepubApp.gastronomy.facebookLink">Facebook Link</span></dt>
+                <dd>
+                    <span>{{ gastronomy.facebookLink }}</span>
+                </dd>
+                <dt><span jhiTranslate="savethepubApp.gastronomy.twitterLink">Twitter Link</span></dt>
+                <dd>
+                    <span>{{ gastronomy.twitterLink }}</span>
+                </dd>
+                <dt><span jhiTranslate="savethepubApp.gastronomy.instagramLink">Instagram Link</span></dt>
+                <dd>
+                    <span>{{ gastronomy.instagramLink }}</span>
+                </dd>
+                <dt><span jhiTranslate="savethepubApp.gastronomy.supportLink" [ngbTooltip]="'savethepubApp.gastronomy.help.supportLink' | translate">Support Link</span></dt>
+                <dd>
+                    <span>{{ gastronomy.supportLink }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/gastronomy', gastronomy.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

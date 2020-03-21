@@ -1,0 +1,90 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="savethepubApp.gastronomy.home.title">Gastronomies</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-gastronomy" [routerLink]="['/gastronomy/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="savethepubApp.gastronomy.home.createLabel">
+            Create a new Gastronomy
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="gastronomies?.length === 0">
+        <span jhiTranslate="savethepubApp.gastronomy.home.notFound">No gastronomies found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="gastronomies?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="savethepubApp.gastronomy.name">Name</span></th>
+                    <th scope="col" ><span jhiTranslate="savethepubApp.gastronomy.category">Category</span></th>
+                    <th scope="col" ><span jhiTranslate="savethepubApp.gastronomy.description">Description</span></th>
+                    <th scope="col" ><span jhiTranslate="savethepubApp.gastronomy.photo">Photo</span></th>
+                    <th scope="col" ><span jhiTranslate="savethepubApp.gastronomy.contactName">Contact Name</span></th>
+                    <th scope="col" ><span jhiTranslate="savethepubApp.gastronomy.contactMail">Contact Mail</span></th>
+                    <th scope="col" ><span jhiTranslate="savethepubApp.gastronomy.addressLine">Address Line</span></th>
+                    <th scope="col" ><span jhiTranslate="savethepubApp.gastronomy.zipCode">Zip Code</span></th>
+                    <th scope="col" ><span jhiTranslate="savethepubApp.gastronomy.city">City</span></th>
+                    <th scope="col" ><span jhiTranslate="savethepubApp.gastronomy.facebookLink">Facebook Link</span></th>
+                    <th scope="col" ><span jhiTranslate="savethepubApp.gastronomy.twitterLink">Twitter Link</span></th>
+                    <th scope="col" ><span jhiTranslate="savethepubApp.gastronomy.instagramLink">Instagram Link</span></th>
+                    <th scope="col" ><span jhiTranslate="savethepubApp.gastronomy.supportLink">Support Link</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let gastronomy of gastronomies ;trackBy: trackId">
+                    <td><a [routerLink]="['/gastronomy', gastronomy.id, 'view']">{{ gastronomy.id }}</a></td>
+                    <td>{{ gastronomy.name }}</td>
+                    <td jhiTranslate="{{ 'savethepubApp.GastronomyCategory.' + gastronomy.category }}">{{ gastronomy.category }}</td>
+                    <td>{{ gastronomy.description }}</td>
+                    <td>
+                        <a *ngIf="gastronomy.photo" (click)="openFile(gastronomy.photoContentType, gastronomy.photo)">
+                            <img [src]="'data:' + gastronomy.photoContentType + ';base64,' + gastronomy.photo" style="max-height: 30px;" alt="gastronomy image"/>
+                        </a>
+                        <span *ngIf="gastronomy.photo">{{ gastronomy.photoContentType }}, {{ byteSize(gastronomy.photo) }}</span>
+                    </td>
+                    <td>{{ gastronomy.contactName }}</td>
+                    <td>{{ gastronomy.contactMail }}</td>
+                    <td>{{ gastronomy.addressLine }}</td>
+                    <td>{{ gastronomy.zipCode }}</td>
+                    <td>{{ gastronomy.city }}</td>
+                    <td>{{ gastronomy.facebookLink }}</td>
+                    <td>{{ gastronomy.twitterLink }}</td>
+                    <td>{{ gastronomy.instagramLink }}</td>
+                    <td>{{ gastronomy.supportLink }}</td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/gastronomy', gastronomy.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/gastronomy', gastronomy.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(gastronomy)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

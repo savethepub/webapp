@@ -1,0 +1,35 @@
+
+/**
+ * Bar, restaurant etc..
+ */
+entity Gastronomy {
+  name          String              required
+
+  category      GastronomyCategory  required
+  description   TextBlob
+  photo         ImageBlob
+  contactName   String
+  contactMail   String
+
+  /**
+   * First line of the address, e.g. street and house number
+   */
+  addressLine   String
+  zipCode       String              maxlength(5)
+  city          String
+
+  facebookLink  String
+  twitterLink   String
+  instagramLink String
+  /**
+   * Link to supporting page, e.g. crowd funding, online order service
+   */
+  supportLink   String
+}
+
+enum GastronomyCategory {
+  BAR,
+  CAFE,
+  RESTAURANT,
+  CLUB
+}

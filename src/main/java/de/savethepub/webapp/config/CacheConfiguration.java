@@ -42,6 +42,7 @@ public class CacheConfiguration {
             createCache(cm, de.savethepub.webapp.domain.User.class.getName());
             createCache(cm, de.savethepub.webapp.domain.Authority.class.getName());
             createCache(cm, de.savethepub.webapp.domain.User.class.getName() + ".authorities");
+            createCache(cm, de.savethepub.webapp.domain.Gastronomy.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

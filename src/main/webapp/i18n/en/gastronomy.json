@@ -1,0 +1,38 @@
+{
+  "savethepubApp": {
+    "gastronomy": {
+      "home": {
+        "title": "Gastronomies",
+        "createLabel": "Create a new Gastronomy",
+        "createOrEditLabel": "Create or edit a Gastronomy",
+        "notFound": "No Gastronomies found"
+      },
+      "created": "A new Gastronomy is created with identifier {{ param }}",
+      "updated": "A Gastronomy is updated with identifier {{ param }}",
+      "deleted": "A Gastronomy is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Gastronomy {{ id }}?"
+      },
+      "detail": {
+        "title": "Gastronomy"
+      },
+      "name": "Name",
+      "category": "Category",
+      "description": "Description",
+      "photo": "Photo",
+      "contactName": "Contact Name",
+      "contactMail": "Contact Mail",
+      "addressLine": "Address Line",
+      "zipCode": "Zip Code",
+      "city": "City",
+      "facebookLink": "Facebook Link",
+      "twitterLink": "Twitter Link",
+      "instagramLink": "Instagram Link",
+      "supportLink": "Support Link",
+      "help": {
+        "addressLine": "First line of the address, e.g. street and house number",
+        "supportLink": "Link to supporting page, e.g. crowd funding, online order service"
+      }
+    }
+  }
+}

@@ -1,0 +1,85 @@
+{
+    "name": "Gastronomy",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "category",
+            "fieldType": "GastronomyCategory",
+            "fieldValues": "BAR,CAFE,RESTAURANT,CLUB",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        },
+        {
+            "fieldName": "photo",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image"
+        },
+        {
+            "fieldName": "contactName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "contactMail",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "addressLine",
+            "javadoc": "First line of the address, e.g. street and house number",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "zipCode",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "5"
+        },
+        {
+            "fieldName": "city",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "facebookLink",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "twitterLink",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "instagramLink",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "supportLink",
+            "javadoc": "Link to supporting page, e.g. crowd funding, online order service",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20200321194500",
+    "javadoc": "Bar, restaurant etc..",
+    "entityTableName": "gastronomy",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}
