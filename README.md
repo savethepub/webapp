@@ -165,9 +165,11 @@ Then run:
 
 For more information refer to [Using Docker and Docker-Compose][], this page also contains information on the docker-compose sub-generator (`jhipster docker-compose`), which is able to generate docker configurations for one or several JHipster applications.
 
-## Continuous Integration (optional)
+## Continuous Integration
 
-To configure CI for your project, run the ci-cd sub-generator (`jhipster ci-cd`), this will let you generate configuration files for a number of Continuous Integration systems. Consult the [Setting up Continuous Integration][] page for more information.
+GitHub CI is configured.
+
+To configure further CI for your project, run the ci-cd sub-generator (`jhipster ci-cd`), this will let you generate configuration files for a number of Continuous Integration systems. Consult the [Setting up Continuous Integration][] page for more information.
 
 [jhipster homepage and latest documentation]: https://www.jhipster.tech
 [jhipster 6.8.0 archive]: https://www.jhipster.tech/documentation-archive/v6.8.0
@@ -187,3 +189,12 @@ To configure CI for your project, run the ci-cd sub-generator (`jhipster ci-cd`)
 [protractor]: https://angular.github.io/protractor/
 [leaflet]: https://leafletjs.com/
 [definitelytyped]: https://definitelytyped.org/
+
+## Deploying to production
+
+### Preparing the server
+
+Requirements: Ubuntu based VM or server.
+
+1. Install Docker https://docs.docker.com/install/linux/docker-ce/ubuntu/
+2. Install Docker compose https://docs.docker.com/compose/install/
