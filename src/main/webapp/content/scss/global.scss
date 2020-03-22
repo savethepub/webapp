@@ -26,6 +26,10 @@ nav {
   font-weight: bold;
 }
 
+a {
+  text-decoration: underline;
+}
+
 a:hover {
   /* make sure browsers use the pointer cursor for anchors, even with no href */
   cursor: pointer;
