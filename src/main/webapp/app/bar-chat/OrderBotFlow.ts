@@ -29,7 +29,7 @@ export class OrderBotFlow {
           value: 'wine'
         },
         {
-          label: 'Sofdrink',
+          label: 'Softdrink',
           value: 'softdrink'
         },
         {
