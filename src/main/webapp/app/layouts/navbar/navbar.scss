@@ -1,6 +1,7 @@
 @import '~bootstrap/scss/functions';
 @import '~bootswatch/dist/darkly/variables';
 @import '~bootstrap/scss/variables';
+@import '../../../content/scss/variables';
 
 /* ==========================================================================
 Navbar
@@ -17,7 +18,7 @@ Navbar
 }
 
 .navbar {
-  padding: 32px 1rem;
+  padding: 32px 22px 42px;
   .dropdown-item.active,
   .dropdown-item.active:focus,
   .dropdown-item.active:hover {
@@ -37,7 +38,7 @@ Navbar
 
   .navbar-toggler {
     &:hover {
-      color: $navbar-dark-hover-color;
+      color: lighten($primary-text-color, 10%);
     }
   }
 }
