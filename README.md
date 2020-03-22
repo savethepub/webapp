@@ -208,6 +208,10 @@ To configure further CI for your project, run the ci-cd sub-generator (`jhipster
 
 Follow instructions on: https://hub.docker.com/r/jrcs/letsencrypt-nginx-proxy-companion/
 
+After the app has been started, connect both networks:
+
+    docker network connect app_default nginx-proxy
+
 #### Install application
 
 1. Create a folder app
@@ -227,5 +231,9 @@ Stop the app
 
 Update the app
 
-    docker-compose -f app/app.yml down \
-      && docker-compose -f app/app.yml up -d
+    docker-compose -f app/app.yml up -d --force-recreate
+
+#### Undeploy app
+
+    docker network disconnect app_default nginx-proxy
+    docker-compose -f app/app.yml down

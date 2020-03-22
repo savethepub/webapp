@@ -67,16 +67,11 @@
     <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->
 
     <!--
-        Load sample data generated with Faker.js
-        - This data can be easily edited using a CSV editor (or even MS Excel) and
-          is located in the 'src/main/resources/config/liquibase/fake-data' directory
-        - By default this data is applied when running with the JHipster 'dev' profile.
-          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
-          Spring Boot configuration key.
+        Load initial data
     -->
-    <changeSet id="20200321194500-1-data" author="jhipster" context="faker">
+    <changeSet id="20200321194500-1-data" author="jhipster">
         <loadData
-                  file="config/liquibase/fake-data/gastronomy.csv"
+                  file="config/liquibase/initial-data/gastronomy.csv"
                   separator=";"
                   tableName="gastronomy">
             <column name="id" type="numeric"/>
