@@ -231,7 +231,8 @@ Stop the app
 
 Update the app
 
-    docker-compose -f app/app.yml up -d --force-recreate
+    docker pull savethepub/webapp && \
+        docker-compose -f app/app.yml up -d --force-recreate
 
 #### Undeploy app
 

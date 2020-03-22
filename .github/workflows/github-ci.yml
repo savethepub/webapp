@@ -42,3 +42,11 @@ jobs:
                   GIT_TAG=:${GITHUB_REF#refs/tags/}
                   DOCKER_TAG=${GIT_TAG#:refs/heads/master}
                   ./gradlew jib -Djib.to.image=savethepub/webapp${DOCKER_TAG} -Djib.to.auth.username="${{ secrets.DOCKER_USERNAME }}" -Djib.to.auth.password="${{ secrets.DOCKER_PASSWORD }}"
+            - name: executing remote ssh commands using password
+              if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+              uses: appleboy/ssh-action@master
+              with:
+                host: ${{ secrets.SSH_HOST }}
+                username: ${{ secrets.SSH_USERNAME }}
+                key: ${{ secrets.SSH_KEY }}
+                script: docker pull savethepub/webapp && docker-compose -f app/app.yml up -d --force-recreate
