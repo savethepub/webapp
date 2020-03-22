@@ -1,0 +1,13 @@
+.chat {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.message-left {
+  align-self: flex-start;
+}
+
+.message-right {
+  align-self: flex-end;
+}
