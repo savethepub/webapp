@@ -1,12 +1,5 @@
-export interface ChatMessage {
-  sender: Sender;
-  content: string;
-  sentAt: Date;
-}
-
-export interface Sender {
-  type: SenderType;
-  name: string;
+export class ChatMessage {
+  constructor(public sender: SenderType, public content: string, public sentAt: Date) {}
 }
 
 export enum SenderType {

@@ -1,5 +1,5 @@
-<div [class.message-left]="message.sender.type === SenderType.Customer"
-     [class.message-right]="message.sender.type === SenderType.Bar"
+<div [class.message-left]="message.sender === SenderType.Customer"
+     [class.message-right]="message.sender === SenderType.Bar"
      class="message-bubble">
     {{message.content}}
 </div>
