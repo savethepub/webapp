@@ -50,7 +50,7 @@ public class GastronomyResource {
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
     @PostMapping("/gastronomies")
-    @PreAuthorize("hasRole(\"" + AuthoritiesConstants.ADMIN + "\")")
+    @PreAuthorize("hasAuthority(\"" + AuthoritiesConstants.ADMIN + "\")")
     public ResponseEntity<Gastronomy> createGastronomy(@Valid @RequestBody Gastronomy gastronomy) throws URISyntaxException {
         log.debug("REST request to save Gastronomy : {}", gastronomy);
         if (gastronomy.getId() != null) {
@@ -72,7 +72,7 @@ public class GastronomyResource {
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
     @PutMapping("/gastronomies")
-    @PreAuthorize("hasRole(\"" + AuthoritiesConstants.ADMIN + "\")")
+    @PreAuthorize("hasAuthority(\"" + AuthoritiesConstants.ADMIN + "\")")
     public ResponseEntity<Gastronomy> updateGastronomy(@Valid @RequestBody Gastronomy gastronomy) throws URISyntaxException {
         log.debug("REST request to update Gastronomy : {}", gastronomy);
         if (gastronomy.getId() == null) {
@@ -90,7 +90,7 @@ public class GastronomyResource {
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of gastronomies in body.
      */
     @GetMapping("/gastronomies")
-    @PreAuthorize("hasRole(\"" + AuthoritiesConstants.ADMIN + "\")")
+    @PreAuthorize("hasAuthority(\"" + AuthoritiesConstants.ADMIN + "\")")
     public List<Gastronomy> getAllGastronomies() {
         log.debug("REST request to get all Gastronomies");
         return gastronomyRepository.findAll();
@@ -116,7 +116,7 @@ public class GastronomyResource {
      * @return the {@link ResponseEntity} with status {@code 204 (NO_CONTENT)}.
      */
     @DeleteMapping("/gastronomies/{id}")
-    @PreAuthorize("hasRole(\"" + AuthoritiesConstants.ADMIN + "\")")
+    @PreAuthorize("hasAuthority(\"" + AuthoritiesConstants.ADMIN + "\")")
     public ResponseEntity<Void> deleteGastronomy(@PathVariable Long id) {
         log.debug("REST request to delete Gastronomy : {}", id);
         gastronomyRepository.deleteById(id);

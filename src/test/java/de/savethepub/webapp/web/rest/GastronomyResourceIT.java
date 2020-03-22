@@ -4,6 +4,7 @@ import de.savethepub.webapp.SavethepubApp;
 import de.savethepub.webapp.domain.Gastronomy;
 import de.savethepub.webapp.repository.GastronomyRepository;
 
+import de.savethepub.webapp.security.AuthoritiesConstants;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +30,7 @@ import de.savethepub.webapp.domain.enumeration.GastronomyCategory;
 @SpringBootTest(classes = SavethepubApp.class)
 
 @AutoConfigureMockMvc
-@WithMockUser
+@WithMockUser(authorities = AuthoritiesConstants.ADMIN)
 public class GastronomyResourceIT {
 
     private static final String DEFAULT_NAME = "AAAAAAAAAA";
@@ -254,6 +255,7 @@ public class GastronomyResourceIT {
     
     @Test
     @Transactional
+    @WithMockUser
     public void getGastronomy() throws Exception {
         // Initialize the database
         gastronomyRepository.saveAndFlush(gastronomy);
@@ -281,6 +283,7 @@ public class GastronomyResourceIT {
 
     @Test
     @Transactional
+    @WithMockUser
     public void getNonExistingGastronomy() throws Exception {
         // Get the gastronomy
         restGastronomyMockMvc.perform(get("/api/gastronomies/{id}", Long.MAX_VALUE))
