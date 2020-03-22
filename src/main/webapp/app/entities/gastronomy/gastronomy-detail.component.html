@@ -54,8 +54,9 @@
                     <span *ngIf="gastronomy.instagramLink"><a target="_blank" [href]="'https://www.instagram.com/' +gastronomy.instagramLink">Instagram</a></span>
                 </dd>
                 <dt><span jhiTranslate="savethepubApp.gastronomy.gofundmeName">Gofundme Name</span></dt>
-                <dd>
-                    <span *ngIf="gastronomy.gofundmeName"><a target="_blank" [href]="'https://www.gofundme.com/f/' +gastronomy.gofundmeName">GoFundMe</a></span>
+                <dd *ngIf="gastronomy.gofundmeName">
+                    <!-- <span><a target="_blank" [href]="'https://www.gofundme.com/f/' +gastronomy.gofundmeName">GoFundMe</a></span> -->
+                    <embed height="500px" width="100%" [src]="goFundMeEmbedUrl" type="text/html"></embed>
                 </dd>
                 <dt><span jhiTranslate="savethepubApp.gastronomy.supportLink" [ngbTooltip]="'savethepubApp.gastronomy.help.supportLink' | translate">Support Link</span></dt>
                 <dd>
