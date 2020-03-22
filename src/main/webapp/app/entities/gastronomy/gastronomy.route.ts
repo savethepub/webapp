@@ -62,7 +62,6 @@ export const gastronomyRoute: Routes = [
       gastronomy: GastronomyResolve
     },
     data: {
-      authorities: [Authority.USER],
       pageTitle: 'savethepubApp.gastronomy.home.title'
     },
     canActivate: [UserRouteAccessService]
