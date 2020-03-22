@@ -1,12 +1,36 @@
-<div class="bar-page" *ngIf="$gastronomy | async">
-    <h1>{{ ($gastronomy | async)?.name }}</h1>
-    <div class="card" style="width: 18rem;">
-        <img (click)="enterPub()" *ngIf="($gastronomy | async)?.photoContentType" class="card-img-top" [src]="'data:' + ($gastronomy | async)?.photoContentType + ';base64,' + ($gastronomy | async)?.photo" alt="Bar profile picture">
-        <div class="card-body">
-          <p class="card-text">{{ ($gastronomy | async)?.description }}</p>
+<div *ngIf="($gastronomy | async)">
+    <div class="bar-page" *ngIf="pageMode == PageMode.DETAIL">
+        <h1>{{ ($gastronomy | async)?.name }}</h1>
+        <img class="img-fluid bar-image" (click)="enterPub()" *ngIf="($gastronomy | async)?.photoContentType" [src]="'data:' + ($gastronomy | async)?.photoContentType + ';base64,' + ($gastronomy | async)?.photo" alt="Bar profile picture">
+        <p class="bar-flow-element">{{ ($gastronomy | async)?.description }}</p>
+        <div class="bar-flow-element chat-teaser bubble">
+            <button routerLink="/crisis-center" (click)="enterPub()" class="btn btn-primary" jhiTranslate="bar.actions.enter">Servus, komm ran!</button>
         </div>
     </div>
-    <div class="bar-flow-element">
-        <button (click)="enterPub()" class="btn btn-primary" jhiTranslate="bar.actions.enter">Kneipe betreten</button>
+    <div *ngIf="pageMode == PageMode.SPLASH">
+        <div  class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                Test 1
+              </div>
+              <div class="carousel-item">
+                Test 2
+              </div>
+              <div class="carousel-item">
+                Test 3
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+            <button class="btn btn-primary" (click)="enterDetailPage()">
+              weiter
+            </button>
+          </div> 
     </div>
 </div>
