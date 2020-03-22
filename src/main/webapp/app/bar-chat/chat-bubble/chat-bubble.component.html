@@ -1,0 +1,6 @@
+<div [class.message-left]="message.sender === SenderType.Customer"
+     [class.message-right]="message.sender === SenderType.Bar"
+     class="message-bubble">
+    {{message.content}}
+</div>
+

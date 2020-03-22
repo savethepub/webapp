@@ -27,6 +27,10 @@ const LAYOUT_ROUTES = [navbarRoute, ...errorRoute];
           loadChildren: () => import('./admin/admin-routing.module').then(m => m.AdminRoutingModule)
         },
         {
+          path: '',
+          loadChildren: () => import('./bar-chat/bar-chat.module').then(m => m.BarChatModule)
+        },
+        {
           path: 'account',
           loadChildren: () => import('./account/account.module').then(m => m.AccountModule)
         },
