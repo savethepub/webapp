@@ -7,5 +7,3 @@ services:
     environment:
       - POSTGRES_USER=savethepub
       - POSTGRES_PASSWORD=
-    ports:
-      - 5432:5432

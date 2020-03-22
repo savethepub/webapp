@@ -8,6 +8,10 @@ services:
       - MANAGEMENT_METRICS_EXPORT_PROMETHEUS_ENABLED=true
       - SPRING_DATASOURCE_URL=jdbc:postgresql://savethepub-postgresql:5432/savethepub
       - JHIPSTER_SLEEP=30 # gives time for other services to boot before the application
+      # Let's encrypt and nginx auto configuration
+      - VIRTUAL_HOST=www.savethe.pub
+      - VIRTUAL_PORT=8080
+      - LETSENCRYPT_HOST=www.savethe.pub
     ports:
       - 8080:8080
   savethepub-postgresql:

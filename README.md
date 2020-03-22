@@ -194,7 +194,38 @@ To configure further CI for your project, run the ci-cd sub-generator (`jhipster
 
 ### Preparing the server
 
-Requirements: Ubuntu based VM or server.
+#### Setup server
+
+1. Ubuntu based server/VM
+2. Open port 80 and 443 to the internet
+
+#### Docker
 
 1. Install Docker https://docs.docker.com/install/linux/docker-ce/ubuntu/
 2. Install Docker compose https://docs.docker.com/compose/install/
+
+#### Setup Reverse Proxy and Let's Encrypt
+
+Follow instructions on: https://hub.docker.com/r/jrcs/letsencrypt-nginx-proxy-companion/
+
+#### Install application
+
+1. Create a folder app
+2. Copy app.yaml and postgresql.yaml from src/main/docker to the app folder
+3. Uncomment/Enable volumes in postgresql.yaml
+4. Remove port in app.yaml
+
+### Start application
+
+Start the app
+
+    docker-compose -f app/app.yml up -d
+
+Stop the app
+
+    docker-compose -f app/app.yml down
+
+Update the app
+
+    docker-compose -f app/app.yml down \
+      && docker-compose -f app/app.yml up -d
