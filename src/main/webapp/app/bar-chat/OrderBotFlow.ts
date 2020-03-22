@@ -29,7 +29,7 @@ export class OrderBotFlow {
           value: 'wine'
         },
         {
-          label: 'Sofdrink',
+          label: 'Softdrink',
           value: 'softdrink'
         },
         {
@@ -58,6 +58,31 @@ export class OrderBotFlow {
         {
           label: 'Spendelink', // todo: implement different support link type labels
           value: this.gastronomy?.supportLink
+        }
+      ],
+      SenderType.Bar,
+      new Date()
+    );
+  }
+
+  getThanksMessage(): ChatMessage {
+    const messagePool = [`Schönen Tag dir noch und vielen Dank, dass du hier warst. Komm gerne wieder und erzähl's deinen Freunden!`];
+    // todo: check if the links are really available/set
+    return new ChatMessage(
+      'socialMessage',
+      this.getRandomMessage(messagePool),
+      [
+        {
+          label: 'Facebook',
+          value: this.gastronomy?.facebookLink
+        },
+        {
+          label: 'Instagram',
+          value: this.gastronomy?.instagramLink
+        },
+        {
+          label: 'Twitter',
+          value: this.gastronomy?.twitterLink
         }
       ],
       SenderType.Bar,
