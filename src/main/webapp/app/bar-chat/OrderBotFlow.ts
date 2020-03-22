@@ -65,6 +65,31 @@ export class OrderBotFlow {
     );
   }
 
+  getThanksMessage(): ChatMessage {
+    const messagePool = [`Schönen Tag dir noch und vielen Dank, dass du hier warst. Komm gerne wieder und erzähl's deinen Freunden!`];
+    // todo: check if the links are really available/set
+    return new ChatMessage(
+      'socialMessage',
+      this.getRandomMessage(messagePool),
+      [
+        {
+          label: 'Facebook',
+          value: this.gastronomy?.facebookLink
+        },
+        {
+          label: 'Instagram',
+          value: this.gastronomy?.instagramLink
+        },
+        {
+          label: 'Twitter',
+          value: this.gastronomy?.twitterLink
+        }
+      ],
+      SenderType.Bar,
+      new Date()
+    );
+  }
+
   private getRandomMessage(messages: string[]): string {
     if (messages.length) return messages[Math.floor(Math.random() * messages.length)];
     return '';

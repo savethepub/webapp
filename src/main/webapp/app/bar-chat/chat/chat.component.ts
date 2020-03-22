@@ -57,12 +57,14 @@ export class ChatComponent implements OnInit {
         }, 1000);
         break;
       case 'payment':
-        if (selectedOption.value) {
-          window.location.href = selectedOption.value;
-        } else {
+        this.chatService.pushMessage(this.orderBot.getThanksMessage());
+        setTimeout(() => {
+          window.open(selectedOption.value, '_blank');
           // todo: handle no url
-        }
-
+        }, 2000);
+        break;
+      case 'socialMessage':
+        window.open(selectedOption.value, '_blank');
         break;
     }
   }
