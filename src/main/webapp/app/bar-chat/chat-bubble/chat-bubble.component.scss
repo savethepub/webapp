@@ -9,7 +9,8 @@ $triangle-pointer-size: 15px;
   background: $bubble-bg-color;
   border-radius: 0.4em;
   padding: 10px;
-  min-height: 100px;
+  min-height: 50px;
+  color: white !important;
 }
 
 .message-bubble:after {

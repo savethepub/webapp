@@ -1,6 +1,7 @@
-<div class="btn-group-vertical">
-    <div *ngFor="let option for options">
-        <button class="btn btn-outline-primary mb-2" type="button">{{option}}</button>
-    </div>
+<div *ngIf="!isClicked" class="btn-group-vertical">
+    <button (click)="valueClicked(message.key, option)" *ngFor="let option of message.options"
+            class="btn btn-outline-primary mt-2"
+            type="button">{{option.label}}</button>
 </div>
+
 

@@ -2,9 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ChatComponent } from './chat/chat.component';
 import { ChatBubbleComponent } from './chat-bubble/chat-bubble.component';
-import { Router, RouterModule } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { ChatSelectorComponent } from './chat-selector/chat-selector.component';
-import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [ChatComponent, ChatBubbleComponent, ChatSelectorComponent],
@@ -12,12 +11,11 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     RouterModule.forChild([
       {
-        path: 'chat/:bar',
+        path: 'chat/:barId',
         component: ChatComponent
       }
       // todo: implement 404 bar not found
-    ]),
-    FormsModule
+    ])
   ]
 })
 export class BarChatModule {}

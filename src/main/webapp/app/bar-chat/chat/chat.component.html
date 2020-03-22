@@ -1,11 +1,12 @@
 <div class="chat">
     <div *ngFor="let message of chat | async"
          [class.message-left]="message.sender === SenderType.Customer"
-         [class.message-right]="message.sender === SenderType.Bar">
+         [class.message-right]="message.sender === SenderType.Bar"
+         class="mb-3">
         <jhi-chat-bubble [message]="message"></jhi-chat-bubble>
-        <!-- <jhi-chat-selector></jhi-chat-selector>-->
+        <jhi-chat-selector (valueSelected)="userSelection($event.messageKey, $event.selectedOption)"
+                           *ngIf="message.options.length > 0"
+                           [message]="message"></jhi-chat-selector>
     </div>
 </div>
-<div class="chat-input">
-    <input (keyup.enter)="sendMessage()" [(ngModel)]="userMessage" class="form-control" type="text"/>
-</div>
+
