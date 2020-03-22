@@ -9,7 +9,6 @@ entity Gastronomy {
   description   TextBlob
   photo         ImageBlob
   contactName   String
-  contactMail   String
 
   /**
    * First line of the address, e.g. street and house number
@@ -21,6 +20,7 @@ entity Gastronomy {
   facebookLink  String
   twitterLink   String
   instagramLink String
+  gofundmeName  String
   /**
    * Link to supporting page, e.g. crowd funding, online order service
    */

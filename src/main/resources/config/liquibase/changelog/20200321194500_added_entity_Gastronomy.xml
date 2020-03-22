@@ -33,9 +33,6 @@
             <column name="contact_name" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            <column name="contact_mail" type="varchar(255)">
-                <constraints nullable="true" />
-            </column>
             <column name="address_line" type="varchar(255)" remarks="First line of the address, e.g. street and house number">
                 <constraints nullable="true" />
             </column>
@@ -54,6 +51,9 @@
             <column name="instagram_link" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
+            <column name="gofundme_name" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
             <column name="support_link" type="varchar(255)" remarks="Link to supporting page, e.g. crowd funding, online order service">
                 <constraints nullable="true" />
             </column>
@@ -67,11 +67,11 @@
     <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->
 
     <!--
-        Load initial data
+        Load fake data
     -->
-    <changeSet id="20200321194500-1-data" author="jhipster">
+    <changeSet id="20200321194500-1-data" author="jhipster" context="faker">
         <loadData
-                  file="config/liquibase/initial-data/gastronomy.csv"
+                  file="config/liquibase/fake-data/gastronomy.csv"
                   separator=";"
                   tableName="gastronomy">
             <column name="id" type="numeric"/>
@@ -81,13 +81,13 @@
             <column name="photo" type="blob"/>
             <column name="photo_content_type" type="string"/>
             <column name="contact_name" type="string"/>
-            <column name="contact_mail" type="string"/>
             <column name="address_line" type="string"/>
             <column name="zip_code" type="string"/>
             <column name="city" type="string"/>
             <column name="facebook_link" type="string"/>
             <column name="twitter_link" type="string"/>
             <column name="instagram_link" type="string"/>
+            <column name="gofundme_name" type="string"/>
             <column name="support_link" type="string"/>
             <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here, do not remove-->
         </loadData>

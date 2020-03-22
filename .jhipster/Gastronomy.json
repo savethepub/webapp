@@ -31,10 +31,6 @@
             "fieldType": "String"
         },
         {
-            "fieldName": "contactMail",
-            "fieldType": "String"
-        },
-        {
             "fieldName": "addressLine",
             "javadoc": "First line of the address, e.g. street and house number",
             "fieldType": "String"
@@ -61,6 +57,10 @@
         },
         {
             "fieldName": "instagramLink",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "gofundmeName",
             "fieldType": "String"
         },
         {

@@ -25,13 +25,13 @@ export class GastronomyUpdateComponent implements OnInit {
     photo: [],
     photoContentType: [],
     contactName: [],
-    contactMail: [],
     addressLine: [],
     zipCode: [null, [Validators.maxLength(5)]],
     city: [],
     facebookLink: [],
     twitterLink: [],
     instagramLink: [],
+    gofundmeName: [],
     supportLink: []
   });
 
@@ -59,13 +59,13 @@ export class GastronomyUpdateComponent implements OnInit {
       photo: gastronomy.photo,
       photoContentType: gastronomy.photoContentType,
       contactName: gastronomy.contactName,
-      contactMail: gastronomy.contactMail,
       addressLine: gastronomy.addressLine,
       zipCode: gastronomy.zipCode,
       city: gastronomy.city,
       facebookLink: gastronomy.facebookLink,
       twitterLink: gastronomy.twitterLink,
       instagramLink: gastronomy.instagramLink,
+      gofundmeName: gastronomy.gofundmeName,
       supportLink: gastronomy.supportLink
     });
   }
@@ -120,13 +120,13 @@ export class GastronomyUpdateComponent implements OnInit {
       photoContentType: this.editForm.get(['photoContentType'])!.value,
       photo: this.editForm.get(['photo'])!.value,
       contactName: this.editForm.get(['contactName'])!.value,
-      contactMail: this.editForm.get(['contactMail'])!.value,
       addressLine: this.editForm.get(['addressLine'])!.value,
       zipCode: this.editForm.get(['zipCode'])!.value,
       city: this.editForm.get(['city'])!.value,
       facebookLink: this.editForm.get(['facebookLink'])!.value,
       twitterLink: this.editForm.get(['twitterLink'])!.value,
       instagramLink: this.editForm.get(['instagramLink'])!.value,
+      gofundmeName: this.editForm.get(['gofundmeName'])!.value,
       supportLink: this.editForm.get(['supportLink'])!.value
     };
   }

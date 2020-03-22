@@ -76,13 +76,13 @@ describe('Service Tests', () => {
             description: 'BBBBBB',
             photo: 'BBBBBB',
             contactName: 'BBBBBB',
-            contactMail: 'BBBBBB',
             addressLine: 'BBBBBB',
             zipCode: 'BBBBBB',
             city: 'BBBBBB',
             facebookLink: 'BBBBBB',
             twitterLink: 'BBBBBB',
             instagramLink: 'BBBBBB',
+            gofundmeName: 'BBBBBB',
             supportLink: 'BBBBBB'
           },
           elemDefault
@@ -105,13 +105,13 @@ describe('Service Tests', () => {
             description: 'BBBBBB',
             photo: 'BBBBBB',
             contactName: 'BBBBBB',
-            contactMail: 'BBBBBB',
             addressLine: 'BBBBBB',
             zipCode: 'BBBBBB',
             city: 'BBBBBB',
             facebookLink: 'BBBBBB',
             twitterLink: 'BBBBBB',
             instagramLink: 'BBBBBB',
+            gofundmeName: 'BBBBBB',
             supportLink: 'BBBBBB'
           },
           elemDefault

@@ -50,9 +50,6 @@ public class GastronomyResourceIT {
     private static final String DEFAULT_CONTACT_NAME = "AAAAAAAAAA";
     private static final String UPDATED_CONTACT_NAME = "BBBBBBBBBB";
 
-    private static final String DEFAULT_CONTACT_MAIL = "AAAAAAAAAA";
-    private static final String UPDATED_CONTACT_MAIL = "BBBBBBBBBB";
-
     private static final String DEFAULT_ADDRESS_LINE = "AAAAAAAAAA";
     private static final String UPDATED_ADDRESS_LINE = "BBBBBBBBBB";
 
@@ -70,6 +67,9 @@ public class GastronomyResourceIT {
 
     private static final String DEFAULT_INSTAGRAM_LINK = "AAAAAAAAAA";
     private static final String UPDATED_INSTAGRAM_LINK = "BBBBBBBBBB";
+
+    private static final String DEFAULT_GOFUNDME_NAME = "AAAAAAAAAA";
+    private static final String UPDATED_GOFUNDME_NAME = "BBBBBBBBBB";
 
     private static final String DEFAULT_SUPPORT_LINK = "AAAAAAAAAA";
     private static final String UPDATED_SUPPORT_LINK = "BBBBBBBBBB";
@@ -99,13 +99,13 @@ public class GastronomyResourceIT {
             .photo(DEFAULT_PHOTO)
             .photoContentType(DEFAULT_PHOTO_CONTENT_TYPE)
             .contactName(DEFAULT_CONTACT_NAME)
-            .contactMail(DEFAULT_CONTACT_MAIL)
             .addressLine(DEFAULT_ADDRESS_LINE)
             .zipCode(DEFAULT_ZIP_CODE)
             .city(DEFAULT_CITY)
             .facebookLink(DEFAULT_FACEBOOK_LINK)
             .twitterLink(DEFAULT_TWITTER_LINK)
             .instagramLink(DEFAULT_INSTAGRAM_LINK)
+            .gofundmeName(DEFAULT_GOFUNDME_NAME)
             .supportLink(DEFAULT_SUPPORT_LINK);
         return gastronomy;
     }
@@ -123,13 +123,13 @@ public class GastronomyResourceIT {
             .photo(UPDATED_PHOTO)
             .photoContentType(UPDATED_PHOTO_CONTENT_TYPE)
             .contactName(UPDATED_CONTACT_NAME)
-            .contactMail(UPDATED_CONTACT_MAIL)
             .addressLine(UPDATED_ADDRESS_LINE)
             .zipCode(UPDATED_ZIP_CODE)
             .city(UPDATED_CITY)
             .facebookLink(UPDATED_FACEBOOK_LINK)
             .twitterLink(UPDATED_TWITTER_LINK)
             .instagramLink(UPDATED_INSTAGRAM_LINK)
+            .gofundmeName(UPDATED_GOFUNDME_NAME)
             .supportLink(UPDATED_SUPPORT_LINK);
         return gastronomy;
     }
@@ -160,13 +160,13 @@ public class GastronomyResourceIT {
         assertThat(testGastronomy.getPhoto()).isEqualTo(DEFAULT_PHOTO);
         assertThat(testGastronomy.getPhotoContentType()).isEqualTo(DEFAULT_PHOTO_CONTENT_TYPE);
         assertThat(testGastronomy.getContactName()).isEqualTo(DEFAULT_CONTACT_NAME);
-        assertThat(testGastronomy.getContactMail()).isEqualTo(DEFAULT_CONTACT_MAIL);
         assertThat(testGastronomy.getAddressLine()).isEqualTo(DEFAULT_ADDRESS_LINE);
         assertThat(testGastronomy.getZipCode()).isEqualTo(DEFAULT_ZIP_CODE);
         assertThat(testGastronomy.getCity()).isEqualTo(DEFAULT_CITY);
         assertThat(testGastronomy.getFacebookLink()).isEqualTo(DEFAULT_FACEBOOK_LINK);
         assertThat(testGastronomy.getTwitterLink()).isEqualTo(DEFAULT_TWITTER_LINK);
         assertThat(testGastronomy.getInstagramLink()).isEqualTo(DEFAULT_INSTAGRAM_LINK);
+        assertThat(testGastronomy.getGofundmeName()).isEqualTo(DEFAULT_GOFUNDME_NAME);
         assertThat(testGastronomy.getSupportLink()).isEqualTo(DEFAULT_SUPPORT_LINK);
     }
 
@@ -243,13 +243,13 @@ public class GastronomyResourceIT {
             .andExpect(jsonPath("$.[*].photoContentType").value(hasItem(DEFAULT_PHOTO_CONTENT_TYPE)))
             .andExpect(jsonPath("$.[*].photo").value(hasItem(Base64Utils.encodeToString(DEFAULT_PHOTO))))
             .andExpect(jsonPath("$.[*].contactName").value(hasItem(DEFAULT_CONTACT_NAME)))
-            .andExpect(jsonPath("$.[*].contactMail").value(hasItem(DEFAULT_CONTACT_MAIL)))
             .andExpect(jsonPath("$.[*].addressLine").value(hasItem(DEFAULT_ADDRESS_LINE)))
             .andExpect(jsonPath("$.[*].zipCode").value(hasItem(DEFAULT_ZIP_CODE)))
             .andExpect(jsonPath("$.[*].city").value(hasItem(DEFAULT_CITY)))
             .andExpect(jsonPath("$.[*].facebookLink").value(hasItem(DEFAULT_FACEBOOK_LINK)))
             .andExpect(jsonPath("$.[*].twitterLink").value(hasItem(DEFAULT_TWITTER_LINK)))
             .andExpect(jsonPath("$.[*].instagramLink").value(hasItem(DEFAULT_INSTAGRAM_LINK)))
+            .andExpect(jsonPath("$.[*].gofundmeName").value(hasItem(DEFAULT_GOFUNDME_NAME)))
             .andExpect(jsonPath("$.[*].supportLink").value(hasItem(DEFAULT_SUPPORT_LINK)));
     }
     
@@ -271,13 +271,13 @@ public class GastronomyResourceIT {
             .andExpect(jsonPath("$.photoContentType").value(DEFAULT_PHOTO_CONTENT_TYPE))
             .andExpect(jsonPath("$.photo").value(Base64Utils.encodeToString(DEFAULT_PHOTO)))
             .andExpect(jsonPath("$.contactName").value(DEFAULT_CONTACT_NAME))
-            .andExpect(jsonPath("$.contactMail").value(DEFAULT_CONTACT_MAIL))
             .andExpect(jsonPath("$.addressLine").value(DEFAULT_ADDRESS_LINE))
             .andExpect(jsonPath("$.zipCode").value(DEFAULT_ZIP_CODE))
             .andExpect(jsonPath("$.city").value(DEFAULT_CITY))
             .andExpect(jsonPath("$.facebookLink").value(DEFAULT_FACEBOOK_LINK))
             .andExpect(jsonPath("$.twitterLink").value(DEFAULT_TWITTER_LINK))
             .andExpect(jsonPath("$.instagramLink").value(DEFAULT_INSTAGRAM_LINK))
+            .andExpect(jsonPath("$.gofundmeName").value(DEFAULT_GOFUNDME_NAME))
             .andExpect(jsonPath("$.supportLink").value(DEFAULT_SUPPORT_LINK));
     }
 
@@ -309,13 +309,13 @@ public class GastronomyResourceIT {
             .photo(UPDATED_PHOTO)
             .photoContentType(UPDATED_PHOTO_CONTENT_TYPE)
             .contactName(UPDATED_CONTACT_NAME)
-            .contactMail(UPDATED_CONTACT_MAIL)
             .addressLine(UPDATED_ADDRESS_LINE)
             .zipCode(UPDATED_ZIP_CODE)
             .city(UPDATED_CITY)
             .facebookLink(UPDATED_FACEBOOK_LINK)
             .twitterLink(UPDATED_TWITTER_LINK)
             .instagramLink(UPDATED_INSTAGRAM_LINK)
+            .gofundmeName(UPDATED_GOFUNDME_NAME)
             .supportLink(UPDATED_SUPPORT_LINK);
 
         restGastronomyMockMvc.perform(put("/api/gastronomies")
@@ -333,13 +333,13 @@ public class GastronomyResourceIT {
         assertThat(testGastronomy.getPhoto()).isEqualTo(UPDATED_PHOTO);
         assertThat(testGastronomy.getPhotoContentType()).isEqualTo(UPDATED_PHOTO_CONTENT_TYPE);
         assertThat(testGastronomy.getContactName()).isEqualTo(UPDATED_CONTACT_NAME);
-        assertThat(testGastronomy.getContactMail()).isEqualTo(UPDATED_CONTACT_MAIL);
         assertThat(testGastronomy.getAddressLine()).isEqualTo(UPDATED_ADDRESS_LINE);
         assertThat(testGastronomy.getZipCode()).isEqualTo(UPDATED_ZIP_CODE);
         assertThat(testGastronomy.getCity()).isEqualTo(UPDATED_CITY);
         assertThat(testGastronomy.getFacebookLink()).isEqualTo(UPDATED_FACEBOOK_LINK);
         assertThat(testGastronomy.getTwitterLink()).isEqualTo(UPDATED_TWITTER_LINK);
         assertThat(testGastronomy.getInstagramLink()).isEqualTo(UPDATED_INSTAGRAM_LINK);
+        assertThat(testGastronomy.getGofundmeName()).isEqualTo(UPDATED_GOFUNDME_NAME);
         assertThat(testGastronomy.getSupportLink()).isEqualTo(UPDATED_SUPPORT_LINK);
     }
 

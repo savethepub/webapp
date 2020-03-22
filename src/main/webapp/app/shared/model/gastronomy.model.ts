@@ -8,13 +8,13 @@ export interface IGastronomy {
   photoContentType?: string;
   photo?: any;
   contactName?: string;
-  contactMail?: string;
   addressLine?: string;
   zipCode?: string;
   city?: string;
   facebookLink?: string;
   twitterLink?: string;
   instagramLink?: string;
+  gofundmeName?: string;
   supportLink?: string;
 }
 
@@ -27,13 +27,13 @@ export class Gastronomy implements IGastronomy {
     public photoContentType?: string,
     public photo?: any,
     public contactName?: string,
-    public contactMail?: string,
     public addressLine?: string,
     public zipCode?: string,
     public city?: string,
     public facebookLink?: string,
     public twitterLink?: string,
     public instagramLink?: string,
+    public gofundmeName?: string,
     public supportLink?: string
   ) {}
 }

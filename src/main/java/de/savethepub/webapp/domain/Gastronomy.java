@@ -54,9 +54,6 @@ public class Gastronomy implements Serializable {
     @Column(name = "contact_name")
     private String contactName;
 
-    @Column(name = "contact_mail")
-    private String contactMail;
-
     /**
      * First line of the address, e.g. street and house number
      */
@@ -79,6 +76,9 @@ public class Gastronomy implements Serializable {
 
     @Column(name = "instagram_link")
     private String instagramLink;
+
+    @Column(name = "gofundme_name")
+    private String gofundmeName;
 
     /**
      * Link to supporting page, e.g. crowd funding, online order service
@@ -174,19 +174,6 @@ public class Gastronomy implements Serializable {
         this.contactName = contactName;
     }
 
-    public String getContactMail() {
-        return contactMail;
-    }
-
-    public Gastronomy contactMail(String contactMail) {
-        this.contactMail = contactMail;
-        return this;
-    }
-
-    public void setContactMail(String contactMail) {
-        this.contactMail = contactMail;
-    }
-
     public String getAddressLine() {
         return addressLine;
     }
@@ -265,6 +252,19 @@ public class Gastronomy implements Serializable {
         this.instagramLink = instagramLink;
     }
 
+    public String getGofundmeName() {
+        return gofundmeName;
+    }
+
+    public Gastronomy gofundmeName(String gofundmeName) {
+        this.gofundmeName = gofundmeName;
+        return this;
+    }
+
+    public void setGofundmeName(String gofundmeName) {
+        this.gofundmeName = gofundmeName;
+    }
+
     public String getSupportLink() {
         return supportLink;
     }
@@ -305,13 +305,13 @@ public class Gastronomy implements Serializable {
             ", photo='" + getPhoto() + "'" +
             ", photoContentType='" + getPhotoContentType() + "'" +
             ", contactName='" + getContactName() + "'" +
-            ", contactMail='" + getContactMail() + "'" +
             ", addressLine='" + getAddressLine() + "'" +
             ", zipCode='" + getZipCode() + "'" +
             ", city='" + getCity() + "'" +
             ", facebookLink='" + getFacebookLink() + "'" +
             ", twitterLink='" + getTwitterLink() + "'" +
             ", instagramLink='" + getInstagramLink() + "'" +
+            ", gofundmeName='" + getGofundmeName() + "'" +
             ", supportLink='" + getSupportLink() + "'" +
             "}";
     }
