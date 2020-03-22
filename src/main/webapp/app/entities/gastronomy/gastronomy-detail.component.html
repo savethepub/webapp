@@ -43,23 +43,23 @@
                 </dd>
                 <dt><span jhiTranslate="savethepubApp.gastronomy.facebookLink">Facebook Link</span></dt>
                 <dd>
-                    <span>{{ gastronomy.facebookLink }}</span>
+                    <span *ngIf="gastronomy.facebookLink"><a target="_blank" [href]="gastronomy.facebookLink">Facebook</a></span>
                 </dd>
                 <dt><span jhiTranslate="savethepubApp.gastronomy.twitterLink">Twitter Link</span></dt>
                 <dd>
-                    <span>{{ gastronomy.twitterLink }}</span>
+                    <span *ngIf="gastronomy.twitterLink"><a target="_blank" [href]="'https://twitter.com/' +gastronomy.twitterLink">Twitter</a></span>
                 </dd>
                 <dt><span jhiTranslate="savethepubApp.gastronomy.instagramLink">Instagram Link</span></dt>
                 <dd>
-                    <span>{{ gastronomy.instagramLink }}</span>
+                    <span *ngIf="gastronomy.instagramLink"><a target="_blank" [href]="'https://www.instagram.com/' +gastronomy.instagramLink">Instagram</a></span>
                 </dd>
                 <dt><span jhiTranslate="savethepubApp.gastronomy.gofundmeName">Gofundme Name</span></dt>
                 <dd>
-                    <span>{{ gastronomy.gofundmeName }}</span>
+                    <span *ngIf="gastronomy.gofundmeName"><a target="_blank" [href]="'https://www.gofundme.com/f/' +gastronomy.gofundmeName">GoFundMe</a></span>
                 </dd>
                 <dt><span jhiTranslate="savethepubApp.gastronomy.supportLink" [ngbTooltip]="'savethepubApp.gastronomy.help.supportLink' | translate">Support Link</span></dt>
                 <dd>
-                    <span>{{ gastronomy.supportLink }}</span>
+                    <span *ngIf="gastronomy.supportLink"><a target="_blank" [href]="gastronomy.supportLink">{{ gastronomy.supportLink }}</a></span>
                 </dd>
             </dl>
 
