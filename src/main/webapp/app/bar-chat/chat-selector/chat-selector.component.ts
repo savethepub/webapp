@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ChatMessage, Option } from 'app/bar-chat/chat.model';
 
 @Component({
   selector: 'jhi-chat-selector',
@@ -6,9 +7,16 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./chat-selector.component.scss']
 })
 export class ChatSelectorComponent implements OnInit {
-  @Input() options!: string[];
+  @Input() message!: ChatMessage;
+  @Output() valueSelected = new EventEmitter();
+  isClicked = false;
 
   constructor() {}
+
+  valueClicked(key: string, option: Option): void {
+    this.isClicked = true;
+    this.valueSelected.emit({ messageKey: key, selectedOption: option });
+  }
 
   ngOnInit(): void {}
 }
