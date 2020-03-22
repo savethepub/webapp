@@ -16,6 +16,7 @@ import { ActiveMenuDirective } from './layouts/navbar/active-menu.directive';
 import { ErrorComponent } from './layouts/error/error.component';
 import { SavethepubGastronomyModule } from './entities/gastronomy/gastronomy.module';
 import { BarPageComponent } from './bar-page/bar-page.component';
+import { BarSplashScreenComponent } from './bar-splash-screen/bar-splash-screen.component';
 
 @NgModule({
   imports: [
@@ -35,7 +36,8 @@ import { BarPageComponent } from './bar-page/bar-page.component';
     PageRibbonComponent,
     ActiveMenuDirective,
     FooterComponent,
-    BarPageComponent
+    BarPageComponent,
+    BarSplashScreenComponent
   ],
   bootstrap: [MainComponent]
 })
