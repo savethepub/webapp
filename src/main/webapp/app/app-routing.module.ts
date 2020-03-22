@@ -19,6 +19,10 @@ const LAYOUT_ROUTES = [navbarRoute, ...errorRoute];
           component: BarPageComponent
         },
         {
+          path: 'drink/:operatorId/:_name',
+          component: BarPageComponent
+        },
+        {
           path: 'admin',
           data: {
             authorities: [Authority.ADMIN]
