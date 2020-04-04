@@ -11,6 +11,7 @@ export class ChatService {
   constructor() {}
 
   // for implementation with chatflow
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   userInput(content: string): void {
     // const userMessage = new ChatMessage('newUserMessage', SenderType.Customer, content, new Date());
     // this.pushMessage(userMessage);
