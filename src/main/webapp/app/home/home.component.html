@@ -1,22 +1,27 @@
-<div>
-    <h1 jhiTranslate="home.title">Rette deine Kneipe!</h1>
-    <p jhiTranslate="home.intro">
-        Diese Initiative wurde geschaffen, 
-        um die Auswirkungen der Corona-Krise für gastronomische Einrichtungen zu lindern.
-    </p>
-    <h2 jhiTranslate="home.relatedLinks">
-        Weiterführende Links:
-    </h2>
-    <ul>
-        <li><a href="https://wirvsvirushackathon.org/" target="_blank" rel="noopener noreferrer" jhiTranslate="home.link.homepage">WirVsVirus Hackathon homepage</a></li>
-        <li><a class="alert-link" routerLink="account/register" jhiTranslate="global.messages.info.register.link">Register a new account</a></li>
-    </ul>
+<jhi-navbar></jhi-navbar>
 
-    <p>
-        <span jhiTranslate="home.like">If you like save-the-pub, don't forget to give us a star on</span> <a href="https://github.com/savethepub" target="_blank" rel="noopener noreferrer" jhiTranslate="home.github">GitHub</a>!
-    </p>
-
-    <div>
-        <button class="btn btn-primary" (click)="login()" jhiTranslate="global.messages.info.authenticated.link">sign in</button>
+<div class="container-fluid">
+    <div  class="content-container">
+        <h1 jhiTranslate="home.title">Rette deine Kneipe!</h1>
+        <p jhiTranslate="home.intro">
+            Diese Initiative wurde geschaffen, 
+            um die Auswirkungen der Corona-Krise für gastronomische Einrichtungen zu lindern.
+        </p>
+        <h2 jhiTranslate="home.relatedLinks">
+            Weiterführende Links:
+        </h2>
+        <ul>
+            <li><a href="https://wirvsvirushackathon.org/" target="_blank" rel="noopener noreferrer" jhiTranslate="home.link.homepage">WirVsVirus Hackathon homepage</a></li>
+            <li><a class="alert-link" routerLink="account/register" jhiTranslate="global.messages.info.register.link">Register a new account</a></li>
+        </ul>
+    
+        <p>
+            <span jhiTranslate="home.like">If you like save-the-pub, don't forget to give us a star on</span> <a href="https://github.com/savethepub" target="_blank" rel="noopener noreferrer" jhiTranslate="home.github">GitHub</a>!
+        </p>
+    
+        <div>
+            <button class="btn btn-primary" (click)="login()" jhiTranslate="global.messages.info.authenticated.link">sign in</button>
+        </div>
     </div>
 </div>
+
