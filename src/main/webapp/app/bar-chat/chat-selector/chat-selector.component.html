@@ -1,7 +1,10 @@
 <div *ngIf="!isClicked" class="btn-group-vertical">
-    <button (click)="valueClicked(message.key, option)" *ngFor="let option of message.options"
-            class="btn btn-outline-primary mt-2"
-            type="button">{{option.label}}</button>
+    <button 
+        (click)="valueClicked(message.key, option)" 
+        *ngFor="let option of message.options"
+        type="button">
+        {{option.label}}
+    </button>
 </div>
 
 

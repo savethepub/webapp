@@ -1,0 +1,13 @@
+@import '../../../content/scss/variables';
+
+button {
+  background-color: $primary-text-color;
+  border: 1px solid $primary-background-color;
+  color: $primary-background-color;
+  border-radius: 15px;
+  padding: 13px;
+  border-bottom-right-radius: 0;
+  &:not(:first-of-type) {
+    margin-top: 20px;
+  }
+}

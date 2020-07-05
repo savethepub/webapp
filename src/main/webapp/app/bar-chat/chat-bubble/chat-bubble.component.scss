@@ -1,39 +1,20 @@
 @import '~bootstrap/scss/mixins';
+@import '../../../content/scss/variables';
 
-$bubble-bg-color: #00aabb;
+$bubble-bg-color: $primary-background-color;
 $triangle-pointer-size: 15px;
 
 .message-bubble {
-  width: 100%;
-  position: relative;
   background: $bubble-bg-color;
-  border-radius: 0.4em;
-  padding: 10px;
+  border-radius: 15px;
+  padding: 15px;
   min-height: 50px;
-  color: white !important;
 }
 
-.message-bubble:after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  width: 0;
-  height: 0;
-  border: $triangle-pointer-size solid transparent;
-  border-bottom: 0;
-  margin-top: -$triangle-pointer-size / 2;
+.message-left {
+  border-bottom-left-radius: 0;
 }
 
-.message-left:after {
-  border-left: 0;
-  margin-left: -$triangle-pointer-size;
-  border-right-color: $bubble-bg-color;
-  left: 0;
-}
-
-.message-right:after {
-  border-right: 0;
-  margin-right: -$triangle-pointer-size;
-  border-left-color: $bubble-bg-color;
-  right: 0;
+.message-right {
+  border-bottom-right-radius: 0;
 }

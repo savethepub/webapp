@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ChatMessage, Option, SenderType } from 'app/bar-chat/chat.model';
 import { ChatService } from 'app/bar-chat/chat.service';
-import { Observable } from 'rxjs';
-import { flatMap, map, scan } from 'rxjs/operators';
+import { Observable, timer, concat, of } from 'rxjs';
+import { flatMap, map, scan, take } from 'rxjs/operators';
 import { OrderBotFlow } from 'app/bar-chat/OrderBotFlow';
 import { ActivatedRoute } from '@angular/router';
 import { GastronomyService } from 'app/entities/gastronomy/gastronomy.service';
@@ -18,6 +18,7 @@ export class ChatComponent implements OnInit {
   userMessage: string;
   // orderBot: ChatBotFlow;
   orderBot!: OrderBotFlow;
+  botMessageQueue: Array<string> = [];
 
   constructor(private gastronomyService: GastronomyService, public chatService: ChatService, private route: ActivatedRoute) {
     // this.orderBot = new ChatMessageFlowFactory().getChat('BarOrder');
@@ -28,24 +29,31 @@ export class ChatComponent implements OnInit {
     try {
       this.route.params
         .pipe(
+          take(1),
           flatMap(currentRoute => this.gastronomyService.find(currentRoute.barId)),
-          map(httpEntity => httpEntity.body)
+          map(httpEntity => httpEntity.body),
+          flatMap(gastronomy => {
+            this.orderBot = new OrderBotFlow(gastronomy);
+            if (this.chatService.isChatEmpty()) {
+              return this.startInteraction();
+            } else {
+              return of();
+            }
+          })
         )
-        .subscribe(gastronomy => {
-          this.orderBot = new OrderBotFlow(gastronomy);
-          this.startInteraction();
-        });
+        .subscribe();
     } catch {
       return;
       // todo: goto 404
     }
   }
 
-  startInteraction(): void {
-    this.chatService.pushMessage(this.orderBot.welcomeMessage());
-    setTimeout(() => {
-      this.chatService.pushMessage(this.orderBot.selectDrinkMessage());
-    }, 1000);
+  startInteraction(): Observable<void> {
+    return concat(this.talk(this.orderBot.welcomeMessage()), this.talk(this.orderBot.selectDrinkMessage()));
+  }
+
+  private talk(message: ChatMessage): Observable<void> {
+    return timer(2000).pipe(map(() => this.chatService.pushMessage(message)));
   }
 
   userSelection(messageId: string, selectedOption: Option): void {
@@ -54,7 +62,7 @@ export class ChatComponent implements OnInit {
         this.chatService.pushMessage(this.orderBot.afterSelectMessage(selectedOption.label));
         setTimeout(() => {
           this.chatService.pushMessage(this.orderBot.paymentMessage());
-        }, 1000);
+        }, 2000);
         break;
       case 'payment':
         this.chatService.pushMessage(this.orderBot.getThanksMessage());

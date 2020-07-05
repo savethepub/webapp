@@ -37,7 +37,7 @@ export class OrderBotFlow {
           value: 'water'
         }
       ],
-      SenderType.Bar,
+      SenderType.Customer,
       new Date()
     );
   }

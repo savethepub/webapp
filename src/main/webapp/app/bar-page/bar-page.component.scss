@@ -22,5 +22,21 @@ button {
   border-radius: 10px;
   border-bottom-left-radius: 0;
   width: 250px;
+  padding: 8px;
   text-align: left;
+}
+
+.btn-caret {
+  display: flex;
+
+  div {
+    &:first-child {
+      flex-grow: 1;
+    }
+  }
+
+  .caret {
+    font-size: 1.5em;
+    line-height: 1;
+  }
 }
